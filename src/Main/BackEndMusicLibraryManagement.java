@@ -4,15 +4,11 @@
  */
 package Main;
 
-import controllers.RegisterControllers;
 
 public class BackEndMusicLibraryManagement {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         
-        RegisterControllers registerController = new RegisterControllers();
-        
-        registerController.Register();
     }
 }

@@ -46,9 +46,9 @@ public int getNextID() {
 }
     
     public void createFile() throws IOException{
-        Path filePath = Paths.get("src/Data/User.txt"); // Huong file toi file User.txt 
-        File fileSave = filePath.toFile(); 
-        System.out.println(fileSave);
+            Path filePath = Paths.get("src/Data/User.txt"); // Huong file toi file User.txt 
+            File fileSave = filePath.toFile(); 
+            System.out.println(fileSave);
         
         if (fileSave.exists()) {  // kiem tra xem file co ton tai chua, neu chua se tao 1 file moi
             System.out.println("File adrealy create"); 
