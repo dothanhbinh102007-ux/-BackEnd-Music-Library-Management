@@ -13,6 +13,7 @@ import java.io.BufferedWriter;
 import Models.Song;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.LinkedList;
 
 public class SongStore {
     
@@ -69,5 +70,43 @@ public class SongStore {
          } catch (IOException e) {
         System.out.println("Error when write: " + e.getMessage());
         }
+    }
+    public LinkedList<Song> getAllSongs() throws IOException{
+        LinkedList<Song> songs = new LinkedList<>();
+        
+        BufferedReader readingSong = new BufferedReader(
+        new FileReader("src/Data/Song.txt") // doc file
+        );
+        String lineRead;
+        
+        while ((lineRead = readingSong.readLine()) != null){
+            
+            if(lineRead.trim().isEmpty()){ // khi doc thi bo qua space
+                continue;
+            }
+            
+            String[] data = lineRead.split("\\|", - 1); // bo qua |
+            
+            int songID = Integer.parseInt(data[0]); // chuyen string sang int
+            String title = data[1];
+            String artist = data[2];
+            String genre = data[3];
+            int duration = Integer.parseInt(data[4]); // chuyen string sang int
+            String filePath = data[5];
+            
+            Song song = new Song(
+            songID,
+            title,
+            artist,
+            genre,
+            duration,
+            filePath
+            );
+            songs.add(song);
+        }
+        
+        readingSong.close();
+        
+        return songs;
     }
 }

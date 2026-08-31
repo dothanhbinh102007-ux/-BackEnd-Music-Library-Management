@@ -13,5 +13,6 @@ public class BackEndMusicLibraryManagement {
         SongControllers songController = new SongControllers();
 
         songController.createSong();
+        songController.showAllSongs();
     }
 }

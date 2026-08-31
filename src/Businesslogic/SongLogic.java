@@ -7,6 +7,7 @@ package Businesslogic;
 import Store.SongStore;
 import Models.Song;
 import java.io.IOException;
+import java.util.LinkedList;
 
 public class SongLogic {
     private SongStore songStore;
@@ -36,4 +37,8 @@ public class SongLogic {
         System.out.println("Error: " + e.getMessage());
         }
     }
+    public LinkedList<Song> getAllSongs() throws IOException{
+        return songStore.getAllSongs();
+    }
+    
 }

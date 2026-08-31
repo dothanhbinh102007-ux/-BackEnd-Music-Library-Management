@@ -1,1 +1,3 @@
-1|ngay mua|son tung|kpop|202|null
+
+1|binhgold|gold|420|210|
+2|binh|2|1|2|

@@ -20,6 +20,7 @@ public class Song {
         this.artist = artist;
         this.genre = genre;
         this.duration = duration;
+        this.filePath = filePath;
     }
     public int getSongID() {
         return songID;

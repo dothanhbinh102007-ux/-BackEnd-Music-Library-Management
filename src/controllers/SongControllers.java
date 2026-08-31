@@ -7,6 +7,8 @@ package controllers;
 import views.SongView;
 import Businesslogic.SongLogic;
 import java.io.IOException;
+import java.util.LinkedList;
+import Models.Song;
 
 public class SongControllers {
     
@@ -32,5 +34,19 @@ public class SongControllers {
             duration,
             filePath
         );
+    }
+    public void showAllSongs() throws IOException{
+        LinkedList<Song> songs = songLogic.getAllSongs();
+        
+        for (Song song : songs){
+            System.out.println(
+            song.getSongID() + "|" +
+            song.getTitle() + "|"  +
+            song.getArtist() + "|" +
+            song.getGenre() + "|" +
+            song.getDuration() + "|" +
+            song.getFilePath()
+            );
+        }
     }
 }
