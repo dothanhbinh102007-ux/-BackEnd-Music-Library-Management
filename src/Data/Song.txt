@@ -1,5 +1,1 @@
-1|Binh Gold|Binh|Rap|210|songs/binhgold.mp3
-2|Lac Troi|Son Tung MTP|Pop|240|songs/lactroi.mp3
-3|Binh Remix|DJ ABC|EDM|180|songs/binhremix.mp3
-4|See You Again|Wiz Khalifa|Pop|230|songs/seeyouagain.mp3
-5|Binh Song|ABC|Rock|200|songs/binhsong.mp3
+
