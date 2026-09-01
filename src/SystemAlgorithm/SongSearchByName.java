@@ -7,10 +7,9 @@ package SystemAlgorithm;
 import Models.Song;
 import java.util.LinkedList;
 
-
-public class SongSearch {
+public class SongSearchByName {
     
-    public LinkedList<Song> search(LinkedList<Song> allSongs, String titleKeyWord){
+    public LinkedList<Song> search(LinkedList<Song> allSongs, String titleKeyWord){ // so sanh linear search (giua ten duoc chon voi nhung Title giong voi ten)
         
         LinkedList<Song> results = new LinkedList<>();
         

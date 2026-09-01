@@ -71,13 +71,13 @@ public class SongStore {
         System.out.println("Error when write: " + e.getMessage());
         }
     }
-    public LinkedList<Song> getAllSongs() throws IOException{
+    public LinkedList<Song> getAllSongs() throws IOException{ // dung de lay 1 lan tat ca nhac ben trong Song.txt
         LinkedList<Song> songs = new LinkedList<>();
         
         BufferedReader readingSong = new BufferedReader(
         new FileReader("src/Data/Song.txt") // doc file
         );
-        String lineRead;
+        String lineRead; // tao 1 bien de doc file
         
         while ((lineRead = readingSong.readLine()) != null){
             
@@ -102,11 +102,73 @@ public class SongStore {
             duration,
             filePath
             );
-            songs.add(song);
+            songs.add(song); // tao 1 cho de hien thi Song
         }
         
         readingSong.close();
         
         return songs;
     }
+    public void updateSong(Song updateSong) throws IOException{
+        
+        BufferedReader readingSong = new BufferedReader(
+            new FileReader("src/Data/Song.txt") // doc file
+        );
+        
+        LinkedList<Song> song = new LinkedList<>();
+        
+        String lineRead; // tao 1 bien de doc file
+        
+        
+        while ((lineRead = readingSong.readLine()) != null){
+            
+            if(lineRead.trim().isEmpty()){ //Giong van GetAllSong
+                continue;
+            }
+            
+            String[] data = lineRead.split("\\|", - 1);
+            
+        int oldSongID = Integer.parseInt(data[0]);
+        
+        if(oldSongID == updateSong.getSongID()){
+            song.add(updateSong);
+        } else{
+            String oldTitle = data[1];
+            String oldArtist = data[2];
+            String oldGenre = data[3];
+            int oldDuration = Integer.parseInt(data[4]);
+            String oldfilePath = data[5];
+            
+        Song oldSong = new Song(
+                oldSongID,
+                oldTitle,
+                oldArtist,
+                oldGenre,
+                oldDuration,
+                oldfilePath
+            );
+        
+        song.add(oldSong);
+        }
+        }
+        readingSong.close();
+        
+        BufferedWriter writingSong = new BufferedWriter(
+                new FileWriter("src/Data/Song.txt")
+        );
+        
+        for(Song n : song){
+            writingSong.write(
+                n.getSongID() + "|" +
+                n.getTitle()  + "|" +
+                n.getArtist() + "|" +
+                n.getGenre()  + "|" +
+                n.getDuration() + "|" +
+                n.getFilePath()
+            );
+            writingSong.newLine();
+        }
+        writingSong.close();
+    }
 }
+        

@@ -59,4 +59,35 @@ public class SongControllers {
         
         songView.displaySearchResults(results);
     }
+    public void songUpdate() throws IOException{
+        
+        showAllSongs();
+        
+        SongView songView = new SongView();
+        
+        int songID = songView.getIDSongForUpdate();
+        
+        Song song = songLogic.getSongByID(songID);
+        
+        if(song == null){
+            System.out.println("Khong tim thay bai hat");
+            return;
+        }
+        System.out.println("Tim thay bai hat");
+        
+        String title = songView.getTitle();
+        String artist = songView.getArtist();
+        String genre = songView.getGenre();
+        int duration = songView.getDuration();
+        String filePath = songView.getFilePath();
+
+        songLogic.songUpdate(
+            songID,
+            title,
+            artist,
+            genre,
+            duration,
+            filePath
+        );
+    }
 }

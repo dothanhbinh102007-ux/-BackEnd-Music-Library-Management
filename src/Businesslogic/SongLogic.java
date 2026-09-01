@@ -8,7 +8,8 @@ import Store.SongStore;
 import Models.Song;
 import java.io.IOException;
 import java.util.LinkedList;
-import SystemAlgorithm.SongSearch;
+import SystemAlgorithm.SongSearchByName;
+import SystemAlgorithm.GetSongByID;
 
 public class SongLogic {
     private SongStore songStore;
@@ -47,10 +48,38 @@ public class SongLogic {
         
         LinkedList<Song> allSongs = songStore.getAllSongs();        
         
-        SongSearch songSearch = new SongSearch();
+        SongSearchByName songSearch = new SongSearchByName();
         
         LinkedList<Song> results = songSearch.search(allSongs, titleKeyWord);
         
         return results;
     }
+    public Song getSongByID(int songID) throws IOException{
+        
+        SongStore songStore = new SongStore();
+        
+        LinkedList<Song> allSongs = songStore.getAllSongs();
+        
+        GetSongByID getSongByID = new GetSongByID();
+        
+        Song song = getSongByID.search(allSongs, songID);
+        
+        return song;
+    }
+    public void songUpdate(int songID, 
+                           String title, 
+                           String artist, 
+                           String genre, 
+                           int duration,
+                           String filePath) throws IOException {
+        Song song = new Song(
+                songID,
+                title,
+                artist,
+                genre,
+                duration,
+                filePath
+        );
+        songStore.updateSong(song);
+    }    
 }

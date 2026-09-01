@@ -54,4 +54,11 @@ public class SongView {
         );
         }
     }
+    
+    private Scanner IDSongForUpdate = new Scanner(System.in); 
+    
+    public int getIDSongForUpdate(){
+        System.out.println("Hay nhap ID nhac can sua: ");
+        return IDSongForUpdate.nextInt();
+    }
 }
