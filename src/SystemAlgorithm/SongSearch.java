@@ -15,7 +15,7 @@ public class SongSearch {
         LinkedList<Song> results = new LinkedList<>();
         
         for (Song song : allSongs){
-            if (song.getTitle().toLowerCase().contains(titleKeyWord.toLowerCase())){
+            if (song.getTitle().toLowerCase().contains(titleKeyWord.toLowerCase())){ // dung de so sanh khong phan biet hoa thuong
                 results.add(song);
             }
         }
