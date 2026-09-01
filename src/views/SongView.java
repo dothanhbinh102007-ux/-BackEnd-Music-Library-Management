@@ -5,6 +5,8 @@
 package views;
 
 import java.util.Scanner;
+import Models.Song;
+import java.util.LinkedList;
 
 public class SongView {
     private Scanner createSong = new Scanner(System.in); // tao de nhap
@@ -29,4 +31,27 @@ public class SongView {
             System.out.println("Nhap lien ket vao: ");
             return createSong.nextLine();
         }
+    private Scanner songSearch = new Scanner(System.in);
+    
+        public String getTitleKeyWord(){
+            System.out.println("Nhap ten bai hat can tim: ");
+            return songSearch.nextLine();
+        }
+    public void displaySearchResults(LinkedList<Song> results){
+        
+        if(results.isEmpty()){
+            System.out.println("Khong tim thay ten nhac nao nhu vay.");
+        }
+        
+        for(Song song : results){
+        System.out.println(
+            song.getSongID() + " | " +
+            song.getTitle() + " | " +
+            song.getArtist() + " | " +
+            song.getGenre() + " | " +
+            song.getDuration() + " | " +
+            song.getFilePath()
+        );
+        }
+    }
 }

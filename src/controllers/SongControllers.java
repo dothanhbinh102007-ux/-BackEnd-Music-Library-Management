@@ -49,4 +49,14 @@ public class SongControllers {
             );
         }
     }
+    public void songSearch() throws IOException{
+        
+        SongView songView = new SongView();
+        
+        String titleKeyWord = songView.getTitleKeyWord();
+        
+        LinkedList<Song> results = songLogic.searchSong(titleKeyWord);
+        
+        songView.displaySearchResults(results);
+    }
 }
