@@ -18,8 +18,8 @@ public class SongLogic {
         songStore = new SongStore();
     }
     public void createSong(String title, String artist,
-                           String genre, int duration,
-                           String filePath) throws IOException{
+                           String genre, String album,
+                            int duration,String filePath) throws IOException{
     try {
 
         int songID = songStore.getNextID();
@@ -29,6 +29,7 @@ public class SongLogic {
             title,
             artist,
             genre,
+            album,                
             duration,
             filePath
         );
@@ -70,6 +71,7 @@ public class SongLogic {
                            String title, 
                            String artist, 
                            String genre, 
+                           String album,
                            int duration,
                            String filePath) throws IOException {
         Song song = new Song(
@@ -77,6 +79,7 @@ public class SongLogic {
                 title,
                 artist,
                 genre,
+                album,
                 duration,
                 filePath
         );

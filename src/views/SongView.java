@@ -23,6 +23,10 @@ public class SongView {
             System.out.println("Nhap the loai: ");
             return createSong.nextLine();
         }
+        public String getAlbum(){
+            System.out.println("Nhap ten album: ");
+            return createSong.nextLine();
+        }
         public int getDuration(){
             System.out.println("Nhap thoi luong: ");
             return createSong.nextInt();
@@ -48,7 +52,8 @@ public class SongView {
             song.getSongID() + " | " +
             song.getTitle() + " | " +
             song.getArtist() + " | " +
-            song.getGenre() + " | " +
+            song.getGenre()  + " | " +
+            song.getAlbum() + "|" +
             song.getDuration() + " | " +
             song.getFilePath()
         );

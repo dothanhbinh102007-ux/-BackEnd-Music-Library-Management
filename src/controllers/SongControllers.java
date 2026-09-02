@@ -24,6 +24,7 @@ public class SongControllers {
         String title = songView.getTitle();
         String artist = songView.getArtist();
         String genre = songView.getGenre();
+        String album = songView.getAlbum();
         int duration = songView.getDuration();
         String filePath = songView.getFilePath();
 
@@ -31,6 +32,7 @@ public class SongControllers {
             title,
             artist,
             genre,
+            album,
             duration,
             filePath
         );
@@ -78,6 +80,7 @@ public class SongControllers {
         String title = songView.getTitle();
         String artist = songView.getArtist();
         String genre = songView.getGenre();
+        String album = songView.getAlbum();
         int duration = songView.getDuration();
         String filePath = songView.getFilePath();
 
@@ -86,6 +89,7 @@ public class SongControllers {
             title,
             artist,
             genre,
+            album,
             duration,
             filePath
         );

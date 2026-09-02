@@ -62,6 +62,7 @@ public class SongStore {
                         "|" + song.getTitle() + 
                         "|" + song.getArtist() +
                         "|" + song.getGenre() + 
+                        "|" + song.getAlbum() +
                         "|" + song.getDuration() + 
                         "|" + song.getFilePath();
            writer.write(data);
@@ -91,14 +92,16 @@ public class SongStore {
             String title = data[1];
             String artist = data[2];
             String genre = data[3];
-            int duration = Integer.parseInt(data[4]); // chuyen string sang int
-            String filePath = data[5];
+            String album = data[4];
+            int duration = Integer.parseInt(data[5]); // chuyen string sang int
+            String filePath = data[6];
             
             Song song = new Song(
             songID,
             title,
             artist,
             genre,
+            album,
             duration,
             filePath
             );
@@ -136,14 +139,16 @@ public class SongStore {
             String oldTitle = data[1];
             String oldArtist = data[2];
             String oldGenre = data[3];
-            int oldDuration = Integer.parseInt(data[4]);
-            String oldfilePath = data[5];
+            String oldAlbum = data[4];
+            int oldDuration = Integer.parseInt(data[5]);
+            String oldfilePath = data[6];
             
         Song oldSong = new Song(
                 oldSongID,
                 oldTitle,
                 oldArtist,
                 oldGenre,
+                oldAlbum,
                 oldDuration,
                 oldfilePath
             );
