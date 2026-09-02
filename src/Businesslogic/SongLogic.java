@@ -81,5 +81,9 @@ public class SongLogic {
                 filePath
         );
         songStore.updateSong(song);
-    }    
+    }
+    public void songDelete(Song deleteSong) throws IOException{
+        
+        songStore.deleteSong(deleteSong);
+    }
 }

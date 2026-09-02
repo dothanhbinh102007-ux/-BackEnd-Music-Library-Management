@@ -61,4 +61,11 @@ public class SongView {
         System.out.println("Hay nhap ID nhac can sua: ");
         return IDSongForUpdate.nextInt();
     }
+    
+    private Scanner IDSongForDelete = new Scanner(System.in);
+    
+    public int getIDSongForDelete(){
+        System.out.println("Hay nhap ID nhac can xoa: ");
+        return IDSongForDelete.nextInt();
+    }
 }

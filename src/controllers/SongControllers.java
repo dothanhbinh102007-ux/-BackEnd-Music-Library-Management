@@ -61,13 +61,13 @@ public class SongControllers {
     }
     public void songUpdate() throws IOException{
         
-        showAllSongs();
+        showAllSongs(); // hien thi toan bo nhac
         
-        SongView songView = new SongView();
+        SongView songView = new SongView(); 
         
         int songID = songView.getIDSongForUpdate();
         
-        Song song = songLogic.getSongByID(songID);
+        Song song = songLogic.getSongByID(songID); 
         
         if(song == null){
             System.out.println("Khong tim thay bai hat");
@@ -89,5 +89,23 @@ public class SongControllers {
             duration,
             filePath
         );
+    }
+    public void songDelete() throws IOException{
+        
+        showAllSongs();
+        
+        SongView songView = new SongView();
+        
+        int songID = songView.getIDSongForDelete();
+        
+        Song song = songLogic.getSongByID(songID);
+        
+        if(song == null){
+            System.out.println("Khong tim thay bai hat");
+            return;
+        }
+        System.out.println("Tim thay bai hat");
+        
+        songLogic.songDelete(song);
     }
 }

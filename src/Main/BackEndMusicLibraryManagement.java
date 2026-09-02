@@ -4,11 +4,14 @@
  */
 package Main;
 import java.io.IOException;
+import controllers.SongControllers;
 
 public class BackEndMusicLibraryManagement {
 
 
     public static void main(String[] args) throws IOException{        
+        SongControllers songController = new SongControllers();
 
+        songController.songDelete();
     }
 }
