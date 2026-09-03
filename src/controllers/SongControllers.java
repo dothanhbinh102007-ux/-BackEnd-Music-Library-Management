@@ -121,5 +121,25 @@ public class SongControllers {
         LinkedList<Song> results = songLogic.searchByGenre(genre);
         
         songView.displaySearchResults(results);
+    }
+    public void songSearchByArtist() throws IOException{
+        
+        SongView songView = new SongView();
+        
+        String artist = songView.getArtistForSearch();
+        
+        LinkedList<Song> results = songLogic.searchByArtist(artist);
+        
+        songView.displaySearchResults(results);
     }    
+    public void songSearchByAlbum() throws IOException{
+        
+        SongView songView = new SongView();
+        
+        String album = songView.getAlbumForSearch();
+        
+        LinkedList<Song> results = songLogic.searchByAlbum(album);
+        
+        songView.displaySearchResults(results);
+    }
 }

@@ -44,7 +44,7 @@ public class SongView {
     public void displaySearchResults(LinkedList<Song> results){
         
         if(results.isEmpty()){
-            System.out.println("Khong tim thay ten nhac nao nhu vay.");
+            System.out.println("Khong tim thay bai hat.");
         }
         
         for(Song song : results){
@@ -79,5 +79,20 @@ public class SongView {
     public String getGenreForSearch(){
         System.out.println("Nhap genre can tim: ");
         return genreForSearch.nextLine();
+    }
+    
+    private Scanner artistForSearch = new Scanner(System.in);
+    
+    
+    public String getArtistForSearch(){
+        System.out.println("Nhap ten nghe si can tim: ");
+        return artistForSearch.nextLine(); 
+    }
+    
+    private Scanner albumForSearch = new Scanner(System.in);
+    
+    public String getAlbumForSearch(){
+        System.out.println("Nhap ten Album can tim: ");
+        return albumForSearch.nextLine();
     }
 }

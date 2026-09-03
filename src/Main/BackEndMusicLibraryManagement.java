@@ -10,8 +10,11 @@ public class BackEndMusicLibraryManagement {
 
 
     public static void main(String[] args) throws IOException{        
+
         SongControllers songController = new SongControllers();
 
-        songController.songSearchByGenre();
+
+        songController.songSearchByAlbum();
+
     }
 }

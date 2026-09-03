@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 import SystemAlgorithm.SongSearchByName;
 import SystemAlgorithm.GetSongByID;
+import SystemAlgorithm.SongSearchByAlbum;
+import SystemAlgorithm.SongSearchByArtist;
 import SystemAlgorithm.SongSearchByGenre;
 
 public class SongLogic {
@@ -98,6 +100,28 @@ public class SongLogic {
         SongSearchByGenre songSearch = new SongSearchByGenre();
         
         LinkedList<Song> results = songSearch.search(allSongs, genre);
+        
+        return results;
+    }
+    public LinkedList<Song> searchByArtist(String artist) throws IOException{
+        SongStore songStore = new SongStore();
+        
+        LinkedList<Song> allSongs = songStore.getAllSongs();
+        
+        SongSearchByArtist songSearch = new SongSearchByArtist();
+        
+        LinkedList<Song> results = songSearch.search(allSongs, artist);
+        
+        return results;
+    }
+    public LinkedList<Song> searchByAlbum(String album) throws IOException{
+        SongStore songStore = new SongStore();
+        
+        LinkedList<Song> allSongs = songStore.getAllSongs();
+        
+        SongSearchByAlbum songSearch = new SongSearchByAlbum();
+        
+        LinkedList<Song> results = songSearch.search(allSongs, album);
         
         return results;
     }

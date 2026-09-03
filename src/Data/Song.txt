@@ -1,4 +1,6 @@
-1|A|Artist A|Pop|Album A|200|a.mp3
-2|B|Artist B|Rock|Album B|180|b.mp3
-3|C|Artist C|Jazz|Album C|220|c.mp3
-4|D|Artist D|Pop|Album D|210|d.mp3
+1|Shape of You|Ed Sheeran|Pop|Divide|233|songs/shape_of_you.mp3
+2|Perfect|Ed Sheeran|Pop|Divide|263|songs/perfect.mp3
+3|Believer|Imagine Dragons|Rock|Evolve|204|songs/believer.mp3
+4|Thunder|Imagine Dragons|Rock|Evolve|187|songs/thunder.mp3
+5|Bad Guy|Billie Eilish|Pop|When We All Fall Asleep|194|songs/bad_guy.mp3
+6|Lovely|Billie Eilish|Pop|Dont Smile at Me|200|songs/lovely.mp3
