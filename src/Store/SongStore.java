@@ -199,7 +199,7 @@ public class SongStore {
         }
             FileWriter writtingSong = new FileWriter("src/Data/Song.txt");
             BufferedWriter writer = new BufferedWriter(writtingSong);
-            
+             
             writer.write(songData.toString()); // du lieu moi de len file cu
             writer.close();  
             readingSong.close();

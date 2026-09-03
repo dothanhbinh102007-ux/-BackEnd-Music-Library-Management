@@ -112,4 +112,14 @@ public class SongControllers {
         
         songLogic.songDelete(song);
     }
+    public void songSearchByGenre() throws IOException{
+        
+        SongView songView = new SongView();
+        
+        String genre = songView.getGenreForSearch();
+        
+        LinkedList<Song> results = songLogic.searchByGenre(genre);
+        
+        songView.displaySearchResults(results);
+    }    
 }

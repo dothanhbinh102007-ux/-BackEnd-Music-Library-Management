@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import SystemAlgorithm.SongSearchByName;
 import SystemAlgorithm.GetSongByID;
+import SystemAlgorithm.SongSearchByGenre;
 
 public class SongLogic {
     private SongStore songStore;
@@ -88,5 +89,16 @@ public class SongLogic {
     public void songDelete(Song deleteSong) throws IOException{
         
         songStore.deleteSong(deleteSong);
+    }
+    public LinkedList<Song> searchByGenre(String genre) throws IOException{
+        SongStore songStore = new SongStore(); // goi SongStore de lay tat ca nhac ra 
+        
+        LinkedList<Song> allSongs = songStore.getAllSongs();
+        
+        SongSearchByGenre songSearch = new SongSearchByGenre();
+        
+        LinkedList<Song> results = songSearch.search(allSongs, genre);
+        
+        return results;
     }
 }

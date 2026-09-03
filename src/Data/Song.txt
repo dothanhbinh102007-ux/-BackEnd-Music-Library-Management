@@ -1,1 +1,4 @@
-
+1|A|Artist A|Pop|Album A|200|a.mp3
+2|B|Artist B|Rock|Album B|180|b.mp3
+3|C|Artist C|Jazz|Album C|220|c.mp3
+4|D|Artist D|Pop|Album D|210|d.mp3

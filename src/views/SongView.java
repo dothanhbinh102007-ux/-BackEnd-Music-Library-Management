@@ -73,4 +73,11 @@ public class SongView {
         System.out.println("Hay nhap ID nhac can xoa: ");
         return IDSongForDelete.nextInt();
     }
+    
+    private Scanner genreForSearch = new Scanner(System.in);
+    
+    public String getGenreForSearch(){
+        System.out.println("Nhap genre can tim: ");
+        return genreForSearch.nextLine();
+    }
 }
