@@ -146,9 +146,19 @@ public class SongControllers {
         
         SongView songView = new SongView();
         
-        int choice = songView.getSortChoice();
+        int choice = songView.getSortChoiceByDuration();
         
         LinkedList<Song> results = songLogic.sortByDuration(choice);
+        
+        songView.displaySearchResults(results);
+    }
+    public void songSortByTitle() throws IOException{
+        
+        SongView songView = new SongView();
+        
+        int choice = songView.getSortChoiceByTitle();
+        
+        LinkedList<Song> results = songLogic.sortByTitle(choice);
         
         songView.displaySearchResults(results);
     }

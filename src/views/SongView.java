@@ -98,12 +98,24 @@ public class SongView {
     
     private Scanner songSortByDuration = new Scanner(System.in);
     
-    public int getSortChoice(){
+    public int getSortChoiceByDuration(){
         
         System.out.println("Hay chon lua chon sap xep:");
         System.out.println("1.Xep theo tang dan.");
         System.out.println("2.Xep theo giam dan.");
+        System.out.println("Nhap lua chon: ");
         
         return songSortByDuration.nextInt();
     }
+    private Scanner songSortByTitle = new Scanner(System.in);
+    
+    public int getSortChoiceByTitle(){
+        
+        System.out.println("Hay chon lua chon sap xep:");
+        System.out.println("1.Xep theo tang dan.");
+        System.out.println("2.Xep theo giam dan.");
+        System.out.println("Nhap lua chon: ");
+        
+        return songSortByTitle.nextInt();
+    }    
 }
