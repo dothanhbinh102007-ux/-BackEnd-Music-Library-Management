@@ -117,5 +117,16 @@ public class SongView {
         System.out.println("Nhap lua chon: ");
         
         return songSortByTitle.nextInt();
-    }    
+    }  
+    private Scanner songSortByArtist = new Scanner(System.in);
+    
+    public int getSortChoiceByArtist(){
+        
+        System.out.println("Hay chon lua chon sap xep:");
+        System.out.println("1.Xep theo tang dan.");
+        System.out.println("2.Xep theo giam dan.");
+        System.out.println("Nhap lua chon: ");
+        
+        return songSortByArtist.nextInt();
+    }  
 }

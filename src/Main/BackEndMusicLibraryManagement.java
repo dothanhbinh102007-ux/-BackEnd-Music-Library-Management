@@ -14,7 +14,7 @@ public class BackEndMusicLibraryManagement {
         SongControllers songController = new SongControllers();
 
 
-        songController.songSortByTitle();
+        songController.songSortByArtist();
 
     }
 }

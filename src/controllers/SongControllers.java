@@ -162,4 +162,14 @@ public class SongControllers {
         
         songView.displaySearchResults(results);
     }
+    public void songSortByArtist() throws IOException{
+        
+        SongView songView = new SongView();
+        
+        int choice = songView.getSortChoiceByArtist();
+        
+        LinkedList<Song> results = songLogic.sortByArtist(choice);
+        
+        songView.displaySearchResults(results);
+    }
 }
