@@ -13,6 +13,7 @@ import SystemAlgorithm.GetSongByID;
 import SystemAlgorithm.SongSearchByAlbum;
 import SystemAlgorithm.SongSearchByArtist;
 import SystemAlgorithm.SongSearchByGenre;
+import SystemAlgorithm.SongSortByDuration;
 
 public class SongLogic {
     private SongStore songStore;
@@ -122,6 +123,17 @@ public class SongLogic {
         SongSearchByAlbum songSearch = new SongSearchByAlbum();
         
         LinkedList<Song> results = songSearch.search(allSongs, album);
+        
+        return results;
+    }
+    public LinkedList<Song> sortByDuration(int choice) throws IOException{
+        SongStore songStore = new SongStore();
+        
+        LinkedList<Song> allSongs = songStore.getAllSongs();
+        
+        SongSortByDuration songSort = new SongSortByDuration();
+        
+        LinkedList<Song> results = songSort.sort(allSongs, choice);
         
         return results;
     }

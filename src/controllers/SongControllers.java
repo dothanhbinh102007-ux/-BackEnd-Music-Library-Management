@@ -142,4 +142,14 @@ public class SongControllers {
         
         songView.displaySearchResults(results);
     }
+    public void songSortByDuration() throws IOException{
+        
+        SongView songView = new SongView();
+        
+        int choice = songView.getSortChoice();
+        
+        LinkedList<Song> results = songLogic.sortByDuration(choice);
+        
+        songView.displaySearchResults(results);
+    }
 }

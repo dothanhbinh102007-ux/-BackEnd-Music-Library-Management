@@ -95,4 +95,15 @@ public class SongView {
         System.out.println("Nhap ten Album can tim: ");
         return albumForSearch.nextLine();
     }
+    
+    private Scanner songSortByDuration = new Scanner(System.in);
+    
+    public int getSortChoice(){
+        
+        System.out.println("Hay chon lua chon sap xep:");
+        System.out.println("1.Xep theo tang dan.");
+        System.out.println("2.Xep theo giam dan.");
+        
+        return songSortByDuration.nextInt();
+    }
 }
