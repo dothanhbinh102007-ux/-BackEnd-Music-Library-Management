@@ -6,7 +6,6 @@ package Store;
 
 import Models.Playlist;
 import Models.Song;
-import Store.SongStore;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -21,7 +20,7 @@ public class PlayListStore {
 
     BufferedReader reader = new BufferedReader(
             new FileReader("src/Data/PlayList.txt")
-    );
+    );//doc file
     String line;
     while ((line = reader.readLine()) != null) {
         
@@ -62,50 +61,57 @@ public class PlayListStore {
            writer.newLine();
            writer.close();         
     }
-    public LinkedList<Playlist> getPlayList() throws IOException{ //dung de doc lai file khi mo lai chuong trinh
-        LinkedList<Playlist> playlist = new LinkedList<>();
+    
+    public void fileUpdate(Playlist playlist) throws IOException{
+        LinkedList<String> lines = new LinkedList<>();
         
-        SongStore songStore = new SongStore();
-        LinkedList<Song> allSongs = songStore.getAllSongs();
+            BufferedReader reader = new BufferedReader(
+                new FileReader("src/Data/PlayList.txt")
+                                   );
+        String line;
+        //doc file
+        while ((line = reader.readLine()) != null) {
+                lines.add(line);
+            }
+        reader.close();
+        //tim playlist r sua cai playlist do
+        for (int i = 0; i < lines.size(); i++) {
+            String[] data = lines.get(i).split("\\|", -1);
         
-        BufferedReader readingPlayList = new BufferedReader(
-        new FileReader("src/Data/PlayList.txt") // doc file
-        ); 
-        String lineRead; // tao 1 bien de doc file
-        
-        while ((lineRead = readingPlayList.readLine()) != null){
-            
-            if(lineRead.trim().isEmpty()){ // khi doc thi bo qua space
+            if (data[0].trim().isEmpty()) {
                 continue;
+            }   
+
+        int playlistID = Integer.parseInt(data[0]);
+
+        if (playlistID == playlist.getPlayListID()) {
+           StringBuilder songID = new StringBuilder();
+
+        for (Song song : playlist.getSongs()) {
+            if (songID.length() > 0) {
+                songID.append(",");
             }
-            
-            String[] data = lineRead.split("\\|", - 1); // bo qua |
-            
-            int playlistID = Integer.parseInt(data[0]); // chuyen string sang int
-            String playlistName = data[1];
-            String songID = data[2];
-            
-            Playlist newPlayList = new Playlist(
-            playlistID,
-            playlistName
-            );
-            
-            String playlistSongID = data[2];
-            
-            String[] songIDs = playlistSongID.split(",");
-            
-            for(String songId : songIDs){
-                int id = Integer.parseInt(songId);
-                
-            for(Song song : allSongs){
-                if(song.getSongID() == id){
-                newPlayList.addSong(song);
-                    }
+        songID.append(song.getSongID());
                 }
+        String newData = playlist.getPlayListID()
+            + "|" + playlist.getPlayListName()
+            + "|" + songID;
+
+        lines.set(i, newData);
             }
-            playlist.add(newPlayList);
         }
-        readingPlayList.close();
-        return playlist;
+        //dung de ghi de cai cu
+        FileWriter fileWriter = new FileWriter("src/Data/PlayList.txt");
+        BufferedWriter writer = new BufferedWriter(fileWriter);
+
+        for (String data : lines) {
+            writer.write(data);
+            writer.newLine();
+            }
+
+        writer.close();
     }
 }
+
+
+
