@@ -26,7 +26,7 @@ public class SongStore {
     String line;
     while ((line = reader.readLine()) != null) {
         
-        String[] data = line.split("\\|");
+        String[] data = line.split("\\|", - 1);
         
         if (data.length == 0 || data[0].trim().isEmpty()) {
             continue;
