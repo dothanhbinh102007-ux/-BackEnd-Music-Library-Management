@@ -1,8 +1,3 @@
-1|Shape of You|Ed Sheeran|Pop|Divide|233|songs/shape_of_you.mp3
-2|Perfect|Ed Sheeran|Pop|Divide|263|songs/perfect.mp3
-3|Believer|Imagine Dragons|Rock|Evolve|204|songs/believer.mp3
-4|Thunder|Imagine Dragons|Rock|Evolve|187|songs/thunder.mp3
-5|Bad Guy|Billie Eilish|Pop|When We All Fall Asleep|194|songs/bad_guy.mp3
-6|Lovely|Billie Eilish|Pop|Dont Smile at Me|200|songs/lovely.mp3
-7|Stay|The Kid LAROI|Pop|F*CK LOVE|141|songs/stay.mp3
-8|Blinding Lights|The Weeknd|Pop|After Hours|200|songs/blinding_lights.mp3
+1|Believer|Imagine Dragons|Rock|Evolve|204|Music/Believer.mp3
+2|Perfect|Ed Sheeran|Pop|Divide|263|Music/Perfect.mp3
+3|Faded|Alan Walker|EDM|Different World|212|Music/Faded.mp3

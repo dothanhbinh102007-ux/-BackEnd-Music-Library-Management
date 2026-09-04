@@ -6,11 +6,13 @@ package Store;
 
 import Models.Playlist;
 import Models.Song;
+import Store.SongStore;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
 
 
 public class PlayListStore {
@@ -59,5 +61,51 @@ public class PlayListStore {
            writer.write(data);
            writer.newLine();
            writer.close();         
+    }
+    public LinkedList<Playlist> getPlayList() throws IOException{ //dung de doc lai file khi mo lai chuong trinh
+        LinkedList<Playlist> playlist = new LinkedList<>();
+        
+        SongStore songStore = new SongStore();
+        LinkedList<Song> allSongs = songStore.getAllSongs();
+        
+        BufferedReader readingPlayList = new BufferedReader(
+        new FileReader("src/Data/PlayList.txt") // doc file
+        ); 
+        String lineRead; // tao 1 bien de doc file
+        
+        while ((lineRead = readingPlayList.readLine()) != null){
+            
+            if(lineRead.trim().isEmpty()){ // khi doc thi bo qua space
+                continue;
+            }
+            
+            String[] data = lineRead.split("\\|", - 1); // bo qua |
+            
+            int playlistID = Integer.parseInt(data[0]); // chuyen string sang int
+            String playlistName = data[1];
+            String songID = data[2];
+            
+            Playlist newPlayList = new Playlist(
+            playlistID,
+            playlistName
+            );
+            
+            String playlistSongID = data[2];
+            
+            String[] songIDs = playlistSongID.split(",");
+            
+            for(String songId : songIDs){
+                int id = Integer.parseInt(songId);
+                
+            for(Song song : allSongs){
+                if(song.getSongID() == id){
+                newPlayList.addSong(song);
+                    }
+                }
+            }
+            playlist.add(newPlayList);
+        }
+        readingPlayList.close();
+        return playlist;
     }
 }
