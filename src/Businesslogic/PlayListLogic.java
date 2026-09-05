@@ -101,4 +101,18 @@ public class PlayListLogic {
         readingPlayList.close();
         return playlist;
     }
+    public void playlistDelete(Playlist deletePlayList) throws IOException{
+        playlistStore.deletePlayList(deletePlayList);
+    }
+    public Playlist getPlayListByID(int playlistID) throws IOException{
+        
+        LinkedList<Playlist> playlists = getPlayList();
+        
+        for(Playlist playlist : playlists){
+            if(playlist.getPlayListID() == playlistID ){
+                return playlist;
+            }
+        }
+        return null;
+    }
 }

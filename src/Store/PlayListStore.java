@@ -111,6 +111,36 @@ public class PlayListStore {
 
         writer.close();
     }
+    public void deletePlayList(Playlist deletePlayList) throws IOException{
+        
+        BufferedReader readingPlayList = new BufferedReader(
+            new FileReader("src/Data/PlayList.txt") // doc file
+        );
+        String lineRead; // tao 1 bien de doc file
+        
+        StringBuilder playlistData = new StringBuilder();
+        
+        while ((lineRead = readingPlayList.readLine()) != null){
+            
+            if(lineRead.trim().isEmpty()){ //Giong van GetPlaylist
+                continue;
+            }
+            String[] data = lineRead.split("\\|", - 1);
+            
+            int currentID = Integer.parseInt(data[0]);
+            
+            if(currentID != deletePlayList.getPlayListID()){ // neu nhu bien khac voi ID can xoa thi giu
+               playlistData.append(lineRead).append("\n");
+            } 
+        }
+            FileWriter writtingPlayList = new FileWriter("src/Data/PlayList.txt");
+            BufferedWriter writer = new BufferedWriter(writtingPlayList);
+             
+            writer.write(playlistData.toString()); // du lieu moi de len file cu
+            writer.close();  
+            readingPlayList.close();
+        
+    }
 }
 
 

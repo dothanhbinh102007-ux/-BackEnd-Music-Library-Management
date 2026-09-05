@@ -11,6 +11,6 @@ public class BackEndMusicLibraryManagement {
 
         PlayListControllers playlistController = new PlayListControllers();
 
-        playlistController.playlistChoice();
+        playlistController.playlistDelete(2);
     }
     }

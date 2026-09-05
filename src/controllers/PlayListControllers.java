@@ -52,4 +52,22 @@ public class PlayListControllers {
         
         playlistLogic.createPlayList(playlistName);
     }
+    public void playlistDelete(int playlistID) throws IOException{
+        
+        LinkedList<Playlist> playlist = playlistLogic.getPlayList();
+        
+        playlistView.showPlayList(playlist);
+        
+        int playlistIDs = playlistView.getPlayListDeleteByID();
+        
+        Playlist deletePlayList = playlistLogic.getPlayListByID(playlistID);
+        
+        if(playlist == null){
+            System.out.println("Khong tim thay playlist.");
+            return;            
+        }
+        System.out.println("Tim thay playlist");
+        
+        playlistLogic.playlistDelete(deletePlayList);
+    }
 }

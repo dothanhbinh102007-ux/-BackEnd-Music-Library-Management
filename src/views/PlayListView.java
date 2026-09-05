@@ -50,4 +50,9 @@ public class PlayListView {
         System.out.println("Chon nhac(Nhap ID nhac): ");
         return choiceSong.nextInt();
     }
+    Scanner choiceToDeletePlayList = new Scanner (System.in);
+    public int getPlayListDeleteByID(){
+        System.out.println("Chon PlayList muon xoa: ");
+        return choiceToDeletePlayList.nextInt();
+    }
 }
